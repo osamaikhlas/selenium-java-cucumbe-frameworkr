@@ -16,7 +16,7 @@ public class LoginPage extends BasePage {
 	@FindBy(xpath = "//input[@data-test='password']")
 	WebElement txtPassword;
 
-	@FindBy(xpath = "//input[@data-test='login-button]")
+	@FindBy(xpath = "//input[@data-test='login-button']")
 	WebElement btnLogin;
 
 

@@ -33,7 +33,7 @@ import pageObjects.ProductsPage;
 public class steps {
      WebDriver driver;
      LoginPage lp;
-     ProductsPage macc;
+     ProductsPage pp;
 
      List<HashMap<String, String>> datamap; //Data driven
 
@@ -71,8 +71,6 @@ public class steps {
     public void user_launch_browser() {
         if(br.equals("chrome"))
         {
-        System.setProperty("webdriver.chrome.driver", "");
-
            driver=new ChromeDriver();
         }
         else if (br.equals("firefox")) {
@@ -109,8 +107,9 @@ public class steps {
 
     @Then("User navigates to MyAccount Page")
     public void user_navigates_to_my_account_page() {
-    	macc=new ProductsPage(driver);
-		boolean targetpage=macc.isMyAccountPageExists();
+    	pp=new ProductsPage(driver);
+		boolean targetpage=pp.isMyAccountPageExists();
+		pp.clickLogout();
 	
         if(targetpage)
         {
@@ -122,6 +121,7 @@ public class steps {
             logger.error("Login Failed ");
             Assert.assertTrue(false);
         }
+       
 
     } 
 
