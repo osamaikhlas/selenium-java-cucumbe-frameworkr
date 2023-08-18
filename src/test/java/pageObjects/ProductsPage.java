@@ -14,14 +14,24 @@ public class ProductsPage extends BasePage {
 	@FindBy(xpath = "//span[@class='title']") // MyAccount Page heading
 	WebElement productHeading;
 	
-	@FindBy(xpath = "//button[@id='react-burger-menu-btn']")
-	WebElement menuButton;
 	
-	@FindBy(css = "[id='logout_sidebar_link']")
-	WebElement logoutButton;
+	@FindBy(css = "[data-test='add-to-cart-sauce-labs-backpack']")
+	WebElement addBackPack;
 	
+	@FindBy(css = "[data-test='remove-sauce-labs-backpack']")
+	WebElement removeBackPack;
+	
+	@FindBy(css = "[data-test='add-to-cart-sauce-labs-bike-light']")
+	WebElement addLight;
+	
+	@FindBy(css = "[data-test='remove-sauce-labs-bike-light']")
+	WebElement removeLight;
+	
+			
+	@FindBy(css = "[class='shopping_cart_link']")
+	WebElement cartButton;
 
-	public boolean isMyAccountPageExists()   // MyAccount Page heading display status
+	public boolean isProductPageExists()   // MyAccount Page heading display status
 	{
 		try {
 			return (productHeading.isDisplayed());
@@ -29,12 +39,22 @@ public class ProductsPage extends BasePage {
 			return (false);
 		}
 	}
-
-	public void clickLogout() {
-		menuButton.click();
-		logoutButton.click();
+	
+	public void addProducts() {
+		addBackPack.click();
+		addLight.click();
+	}
+	
+	public void removeProducts() {
 		
+		removeLight.click();
 
 	}
+	
+	public void clickOnCart() {
+		cartButton.click();
+	}
+
+	
 	
 }
