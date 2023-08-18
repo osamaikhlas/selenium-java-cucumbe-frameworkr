@@ -30,9 +30,8 @@ public class ProductsPage extends BasePage {
 		}
 	}
 
-	public void clickLogout() throws InterruptedException {
+	public void clickLogout() {
 		menuButton.click();
-		wait(2000);
 		logoutButton.click();
 		
 
