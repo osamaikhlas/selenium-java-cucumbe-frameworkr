@@ -49,7 +49,7 @@ public class steps {
         //for logging
         logger= LogManager.getLogger(this.getClass());
         
-        File src = new File("//Users//oikhlas//Downloads//opencart_cucumber_framework-master//resources//config.properties");
+        File src = new File(".//resources//config.properties");
 		FileInputStream fis = new FileInputStream(src);
 		Properties pro = new Properties();
 		pro.load(fis);
@@ -71,6 +71,8 @@ public class steps {
     public void user_launch_browser() {
         if(br.equals("chrome"))
         {
+        System.setProperty("webdriver.chrome.driver", "");
+
            driver=new ChromeDriver();
         }
         else if (br.equals("firefox")) {
