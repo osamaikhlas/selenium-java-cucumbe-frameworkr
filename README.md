@@ -18,7 +18,7 @@
         if(br.equals("chrome"))
         {	
 --->        
-#System.setProperty("webdriver.chrome.driver", "exact path to your chromedriver"); //This line needs to be added
+#System.setProperty("webdriver.chrome.driver", "exact path to your chromedriver"); //This line needs to be added in user_launch_browser()
 <!---
            driver=new ChromeDriver();
         }
